@@ -15,37 +15,20 @@ public class CreateReportAdminPage {
 
 	WebDriver driver;
 	HelperClass helperObj;
+	By searchNameAndSSN = By.name("search");
+	By search = By.xpath("//input[@type='button']");
+	By patientName = By.xpath("//div[@id='show']//table//tbody//tr//td[1]/a");
 	
 	public CreateReportAdminPage(WebDriver driver) {
-		
 		this.driver = driver ;
 	}
-	
-	
-	public void patientSearchName(String name)  {
-
-		String searchName = "//input[@name='search']";
-		String search = "//input[@type='button']";
-		driver.findElement(By.xpath(searchName)).sendKeys(name);
-		driver.findElement(By.xpath(search)).click();
-
-
-
-	}
-
-	public void patientSearchSSN(String ssn) throws InterruptedException  {
-
-		By searchSSN = By.xpath("//input[@name='search']");
-		 
-		By search = By.xpath("//input[@type='button']");
-		driver.findElement(searchSSN).sendKeys(ssn);
+	public void patientSearchBySSN(String ssn) throws InterruptedException
+	{
+		driver.findElement(searchNameAndSSN).sendKeys(ssn);
 		driver.findElement(search).click();
-		Thread.sleep(5000);
-		
-		String nameValue = "//div[@id='show']//table//tbody//tr//td[1]/a";
-		driver.findElement(By.xpath(nameValue)).click();
-
-
+	    HelperClass helperObj = new HelperClass(driver);
+	    WebElement e =helperObj.visibilityofElementLocated(patientName, 30);
+		e.click();
 	}
 
 	public void searchRecord(String searchName, String searchSSN) {

@@ -32,7 +32,7 @@ public class CreateReportAdminTest extends TestBase implements IHookable{
 		helperObj.adminLogin(adminUser,adminPassword);
 		helperObj.moduleNavigation("Patients");
 		CreateReportAdminPage createRepo = new CreateReportAdminPage(driver);
-		createRepo.patientSearchName(searchPatient);
+		createRepo.patientSearchSSN(searchPatient);
 		createRepo.searchRecord(searchPatient,searchPatientSSN);
 		createRepo.patientDetails(searchPatientSSN);
 		SoftAssert sa = new SoftAssert();

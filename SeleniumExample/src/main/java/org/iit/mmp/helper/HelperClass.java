@@ -74,6 +74,12 @@ public class HelperClass {
 		driver = wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameId));
 		return driver;
 	}
+	public WebElement visibilityofElementLocated(By locator,int timeinSecs)
+	{
+		WebDriverWait wait = new WebDriverWait(driver,timeinSecs);
+		WebElement e= wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		return e;
+	}
 	public void switchToSideBar(){
 		driver.findElement(By.xpath("//div[@class='left-sidebar']")).click();
 	}

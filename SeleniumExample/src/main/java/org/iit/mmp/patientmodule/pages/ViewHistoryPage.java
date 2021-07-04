@@ -12,7 +12,7 @@ public class ViewHistoryPage {
 	HelperClass helperObj ;
 	
 	By button = By.xpath("//button[contains(text(),'View History')]");
-
+    By viewPrescriptionButton = By.xpath("//input[@value='Past Prescription']");
 	
 	public ViewHistoryPage(WebDriver driver)
 	{
@@ -40,6 +40,10 @@ public class ViewHistoryPage {
 			panel.findElements(By.tagName("a")).get(i).sendKeys(clickonLinkTab);      
 		}
 
+	}
+	public void clickPrescriptionButton()
+	{
+		driver.findElement(viewPrescriptionButton).click();
 	}
 
 }

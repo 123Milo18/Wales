@@ -17,7 +17,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HelperClass {
-	int i = 0;
 	WebDriver driver;
 	
 	public HelperClass(WebDriver driver){
@@ -154,8 +153,7 @@ public class HelperClass {
 			System.out.println("Scrolling down to the exact location" );
 		}
 	    public void closeDriver() {
-			//driver.findElement(By.xpath("//span[contains(text(), 'Logout')]")).click();
-			driver.close();
+		           driver.close();
 		}
 
 

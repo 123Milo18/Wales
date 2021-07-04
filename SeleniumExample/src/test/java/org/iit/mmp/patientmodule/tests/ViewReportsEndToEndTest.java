@@ -28,7 +28,7 @@ public class ViewReportsEndToEndTest extends TestBase implements IHookable{
 		helperObj.adminLogin(pro.getProperty("adminUser"),pro.getProperty("adminPassword"));
 		helperObj.moduleNavigation("Patients");
 		CreateReportAdminPage createRepo = new CreateReportAdminPage(driver);
-		createRepo.patientSearchName(pro.getProperty("patientName"));
+		createRepo.patientSearchBySSN(pro.getProperty("SSN"));
 		createRepo.searchRecord(pro.getProperty("patientName"),pro.getProperty("SSN"));
 		createRepo.patientDetails(pro.getProperty("SSN"));
 		HashMap<String, String> hMap = createRepo.reportDetail(reptName,reptDesc,uploadFilepath);

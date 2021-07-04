@@ -31,7 +31,8 @@ public class SendMessagesTests extends TestBase implements IHookable{
 	String adminPassword;
 	
 	
-	@Test (dataProvider = "testData", description="US_009 SendMessageTests",groups={"US_009","regression","sanity","patientmodule"})
+	@Test (dataProvider = "testData", description="US_009 SendMessageTests",
+			groups={"US_009","regression","sanity","patientmodule"})
 	public void sendMessage(String uName, String password) throws Exception{
 		
 		instantiateDriver();
